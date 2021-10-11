@@ -1,4 +1,3 @@
-extern crate exercism_rust;
 use exercism_rust::q05::reverse;
 
 /// Process a single test case for the property `reverse`

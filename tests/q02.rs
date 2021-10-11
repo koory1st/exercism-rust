@@ -1,7 +1,7 @@
-// extern crate chrono;
-
 extern crate chrono;
+
 use chrono::{TimeZone, Utc};
+
 use exercism_rust::q02::after;
 
 #[test]

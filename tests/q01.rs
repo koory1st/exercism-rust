@@ -1,5 +1,3 @@
-extern crate exercism_rust;
-
 use exercism_rust::q01::hello;
 
 #[test]

@@ -1,5 +1,5 @@
-extern crate exercism_rust;
 use exercism_rust::q06::nth;
+
 #[test]
 fn test_first_prime() {
     assert_eq!(nth(0), 2);

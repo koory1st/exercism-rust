@@ -1,5 +1,3 @@
-extern crate exercism_rust;
-
 use exercism_rust::q03::is_leap_year;
 
 #[test]

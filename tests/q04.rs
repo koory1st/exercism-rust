@@ -1,6 +1,5 @@
-extern crate exercism_rust;
-
 use exercism_rust::q04::raindrops;
+
 #[test]
 fn test_1() {
     assert_eq!("1", raindrops(1));
