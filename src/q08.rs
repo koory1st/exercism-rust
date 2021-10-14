@@ -5,23 +5,19 @@
 // 1 bottle of beer on the wall, 1 bottle of beer.\nTake it down and pass it around, no more bottles of beer on the wall.
 // No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.
 pub fn verse(n: i32) -> String {
-    // todo 使用 struct 保存结果
     let curr = Type::new(n);
-    let curr_count_str_initial = curr.get_count_str(true);
-    let curr_count_str = curr.get_count_str(false);
-    let curr_bottle = curr.get_bottle();
-    let curr_action = curr.get_action();
-    let next = curr.next();
-    let next_count_str = next.get_count_str(false);
-    let next_bottle = next.get_bottle();
+    let next = curr.next().get_num();
+
+    let curr = curr.get_num();
+
     format!("{} {} of beer on the wall, {} {} of beer.\n{}, {} {} of beer on the wall.\n",
-            curr_count_str_initial,
-            curr_bottle,
-            curr_count_str,
-            curr_bottle,
-            curr_action,
-            next_count_str,
-            next_bottle
+            curr.count_str_initial,
+            curr.bottle,
+            curr.count_str,
+            curr.bottle,
+            curr.action,
+            next.count_str,
+            next.bottle
     )
 }
 
@@ -33,6 +29,13 @@ pub fn sing(start: i32, end: i32) -> String {
         i = i - 1;
     }
     ret.join("\n")
+}
+
+struct Num {
+    count_str_initial: String,
+    count_str: String,
+    bottle: String,
+    action: String,
 }
 
 enum Type {
@@ -102,6 +105,15 @@ impl Type {
             _ => { "" }
         };
         format!("Take {} down and pass it around", ret)
+    }
+
+    fn get_num(&self) -> Num {
+        Num {
+            count_str_initial: self.get_count_str(true),
+            count_str: self.get_count_str(false),
+            bottle: self.get_bottle(),
+            action: self.get_action(),
+        }
     }
 }
 
