@@ -7,3 +7,4 @@ pub mod q06;
 pub mod q07;
 pub mod q08;
 pub mod q09;
+pub mod q10;
